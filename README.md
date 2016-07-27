@@ -28,7 +28,7 @@ Using the client is safe. The client is currently hardcoded to a 5 second,
  timeout. I'll make this configurable if people ask for that, please file a
  request for any features. Please send feedback! It currently does not cache
  responses, if this is a feature you'd like earlier rather than later, post a
- request. The validation of DNSSec is complete including NSEC. As of now NSEC3
+ request. The validation of DNSSEC is complete including NSEC. As of now NSEC3
  is broken, and I may never plan to support it. I have some alternative ideas
  for private data in the zone.
 
@@ -37,7 +37,7 @@ Using the client is safe. The client is currently hardcoded to a 5 second,
 These are not unique to this client, but are high level functions that hide
 the details in DNS from the caller
 
-* secure_query - DNSSec validation
+* secure_query - DNSSEC validation
 * create - atomic create of a record, with authenticated request
 * append - verify existence of a record and append to it
 * compare_and_swap - atomic (depends on server) compare and swap
@@ -69,7 +69,7 @@ Zone signing support is complete, to insert a key store a pem encoded rsa file
  key rotation. Rotating the key currently is not available online and requires
  a restart of the server process.
 
-## DNSSec status
+## DNSSEC status
 
 Currently the root key is hardcoded into the system. This gives validation of
  DNSKEY and DS records back to the root. NSEC is implemented, but not NSEC3.
